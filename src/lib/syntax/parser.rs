@@ -412,9 +412,7 @@ impl Parser {
                     == TokenData::Punctuator(Punctuator::CloseBracket);
                 loop {
                     let token = self.get_token(self.pos)?;
-                    if token.data == TokenData::Punctuator(Punctuator::CloseBracket)
-                        && expect_comma_or_end
-                    {
+                    if token.data == TokenData::Punctuator(Punctuator::CloseBracket) {
                         self.pos += 1;
                         break;
                     } else if token.data == TokenData::Punctuator(Punctuator::Comma)
